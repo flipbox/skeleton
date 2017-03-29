@@ -1,0 +1,4 @@
+.vagrant
+*.sublime-workspace
+.idea
+.DS_Store
