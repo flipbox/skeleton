@@ -101,16 +101,15 @@ class JsonHelper
                 return '{' .
                     join(
                         ',',
-                            array_map(
-                                [
-                                    JsonHelper::class,
-                                    'nameValue'
-                                ],
-                                array_keys($vars),
-                                array_values($vars)
-                            )
+                        array_map(
+                            [
+                                JsonHelper::class,
+                                'nameValue'
+                            ],
+                            array_keys($vars),
+                            array_values($vars)
                         )
-                    . '}';
+                    ) . '}';
 
             default:
                 return '';
