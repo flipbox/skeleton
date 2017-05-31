@@ -1,4 +1,6 @@
-.vagrant
-*.sublime-workspace
-.idea
+/build
+/vendor
+composer.phar
+composer.lock
 .DS_Store
+.idea
