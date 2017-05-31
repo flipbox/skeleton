@@ -67,10 +67,12 @@ class JsonHelper
                     (array_keys($var) !== range(0, sizeof($var) - 1))
                 ) {
                     return '{' .
-                        join(',',
+                        join(
+                            ',',
                             array_map(
                                 [
-                                    JsonHelper::class, 'nameValue'
+                                    JsonHelper::class,
+                                    'nameValue'
                                 ],
                                 array_keys($var),
                                 array_values($var)
@@ -97,9 +99,17 @@ class JsonHelper
                     $vars = get_object_vars($var);
                 }
                 return '{' .
-                    join(',', array_map(array(JsonHelper::class, 'nameValue'),
-                        array_keys($vars),
-                        array_values($vars)))
+                    join(
+                        ',',
+                            array_map(
+                                [
+                                    JsonHelper::class,
+                                    'nameValue'
+                                ],
+                                array_keys($vars),
+                                array_values($vars)
+                            )
+                        )
                     . '}';
 
             default:

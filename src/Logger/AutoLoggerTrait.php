@@ -61,5 +61,4 @@ trait AutoLoggerTrait
             $this->getLogger()->log($level, $message, $context);
         }
     }
-
 }
