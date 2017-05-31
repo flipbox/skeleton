@@ -47,7 +47,6 @@ abstract class AbstractObject implements ObjectInterface
         $config['class'] = static::class;
 
         return ObjectHelper::create($config);
-
     }
 
     /**

@@ -62,12 +62,20 @@ class JsonHelper
                  */
 
                 // treat as a JSON object
-                if (is_array($var) && count($var) && (array_keys($var) !== range(0, sizeof($var) - 1))) {
+                if (is_array($var) &&
+                    count($var) &&
+                    (array_keys($var) !== range(0, sizeof($var) - 1))
+                ) {
                     return '{' .
-                        join(',', array_map(array(JsonHelper::class, 'nameValue'),
-                            array_keys($var),
-                            array_values($var)))
-                        . '}';
+                        join(',',
+                            array_map(
+                                [
+                                    JsonHelper::class, 'nameValue'
+                                ],
+                                array_keys($var),
+                                array_values($var)
+                            )
+                        ) . '}';
                 }
 
                 // treat it like a regular array

@@ -250,21 +250,15 @@ class ArrayHelper
     public static function matches($keys = [], $array = []): array
     {
         if (!empty($keys) && !empty($array)) {
-
             $matchingProperties = [];
 
             foreach ($keys as $property) {
-
                 if ($matchedAttribute = static::getValue($array, $property)) {
-
                     $matchingProperties[$property] = $matchedAttribute;
-
                 }
-
             }
 
             return $matchingProperties;
-
         }
 
         return $array;

@@ -29,7 +29,7 @@ abstract class AbstractObjectCollection extends AbstractObject implements Object
      *
      * @var array|\ArrayIterator
      */
-    protected $_items = [];
+    protected $items = [];
 
     /*******************************************
      * ITEMS
@@ -57,7 +57,7 @@ abstract class AbstractObjectCollection extends AbstractObject implements Object
             );
         }
 
-        $this->_items[] = $item;
+        $this->items[] = $item;
 
         return $this;
     }
@@ -68,7 +68,7 @@ abstract class AbstractObjectCollection extends AbstractObject implements Object
      */
     public function setItems($items = [])
     {
-        $this->_items = [];
+        $this->items = [];
 
         // Make sure we can iterate over it
         if (!is_array($items) && !$items instanceof \Traversable) {
@@ -88,7 +88,7 @@ abstract class AbstractObjectCollection extends AbstractObject implements Object
      */
     public function getItems($indexBy = null)
     {
-        return $this->_items;
+        return $this->items;
     }
 
     /**
@@ -130,7 +130,7 @@ abstract class AbstractObjectCollection extends AbstractObject implements Object
      */
     public function merge(ObjectCollectionInterface $collection)
     {
-        $this->_items = array_merge(
+        $this->items = array_merge(
             $this->getItems(),
             $collection->getItems()
         );

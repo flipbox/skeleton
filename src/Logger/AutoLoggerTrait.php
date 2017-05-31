@@ -25,7 +25,7 @@ trait AutoLoggerTrait
      *
      * @var LoggerInterface
      */
-    private $_logger;
+    private $logger;
 
     /**
      * Set a logger
@@ -34,7 +34,7 @@ trait AutoLoggerTrait
      */
     public function setLogger(LoggerInterface $logger)
     {
-        $this->_logger = $logger;
+        $this->logger = $logger;
     }
 
     /**
@@ -44,7 +44,7 @@ trait AutoLoggerTrait
      */
     public function getLogger()
     {
-        return $this->_logger;
+        return $this->logger;
     }
 
     /**

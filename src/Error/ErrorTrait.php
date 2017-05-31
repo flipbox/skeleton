@@ -17,7 +17,7 @@ trait ErrorTrait
     /**
      * @var array The errors (key => value[])
      */
-    protected $_errors;
+    protected $errors;
 
     /**
      * Identify whether there are any errors
@@ -40,9 +40,9 @@ trait ErrorTrait
     public function getErrors($attribute = null): array
     {
         if ($attribute === null) {
-            return $this->_errors === null ? [] : $this->_errors;
+            return $this->errors === null ? [] : $this->errors;
         } else {
-            return isset($this->_errors[$attribute]) ? $this->_errors[$attribute] : [];
+            return isset($this->errors[$attribute]) ? $this->errors[$attribute] : [];
         }
     }
 
@@ -88,7 +88,7 @@ trait ErrorTrait
      */
     public function addError($attribute, $error = '')
     {
-        $this->_errors[$attribute][] = $error;
+        $this->errors[$attribute][] = $error;
     }
 
     /**
@@ -117,9 +117,9 @@ trait ErrorTrait
     public function clearErrors($attribute = null)
     {
         if ($attribute === null) {
-            $this->_errors = [];
+            $this->errors = [];
         } else {
-            unset($this->_errors[$attribute]);
+            unset($this->errors[$attribute]);
         }
     }
 }
