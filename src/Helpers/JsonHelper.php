@@ -16,7 +16,6 @@ use JsonSerializable;
  */
 class JsonHelper
 {
-
     /**
      * Encodes an arbitrary variable into JSON format
      *
@@ -113,5 +112,4 @@ class JsonHelper
     {
         return self::encode(strval($name)) . ':' . self::encode($value);
     }
-
 }

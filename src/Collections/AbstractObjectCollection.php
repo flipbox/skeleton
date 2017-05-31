@@ -49,14 +49,12 @@ abstract class AbstractObjectCollection extends AbstractObject implements Object
 
         // Validate instance
         if ($itemInstance && !$item instanceof $itemInstance) {
-
             throw new InvalidCollectionItemException(
                 sprintf(
                     "Unable to add item to collection because it must be an instance of '%s'",
                     static::ITEM_CLASS_INSTANCE
                 )
             );
-
         }
 
         $this->_items[] = $item;
@@ -101,9 +99,7 @@ abstract class AbstractObjectCollection extends AbstractObject implements Object
         $items = $this->getItems();
 
         if ($items instanceof \ArrayIterator) {
-
             return $items;
-
         }
 
         return new \ArrayIterator($items);

@@ -43,13 +43,9 @@ abstract class AbstractModelCollection extends AbstractObjectCollection implemen
         $itemErrors = [];
 
         foreach ($this->getItems() as $item) {
-
             if ($item->hasErrors($attribute)) {
-
                 $itemErrors[$this->getItemId($item)] = $item->getErrors($attribute);
-
             }
-
         }
 
         return array_merge(
@@ -64,9 +60,7 @@ abstract class AbstractModelCollection extends AbstractObjectCollection implemen
     public function clearErrors($attribute = null)
     {
         foreach ($this->getItems() as $item) {
-
             $item->clearErrors($attribute);
-
         }
 
         $this->_traitClearErrors($attribute);

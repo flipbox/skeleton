@@ -39,22 +39,17 @@ class ObjectHelper
     {
         // Populate model attributes
         if (!empty($properties)) {
-
             // To array
             if (!is_array($properties)) {
                 $properties = ArrayHelper::toArray($properties, [], false);
             }
 
             foreach ($properties as $name => $value) {
-
                 if ($object->canSetProperty($name)) {
                     $object->$name = $value;
                 }
-
             }
-
         }
-
         return $object;
     }
 
@@ -91,7 +86,6 @@ class ObjectHelper
 
         // Make sure we have a valid class
         if ($instanceOf && !is_subclass_of($class, $instanceOf)) {
-
             throw new InvalidConfigurationException(
                 sprintf(
                     "The class '%s' must be an instance of '%s'",
@@ -140,46 +134,27 @@ class ObjectHelper
     {
         // Normalize the config
         if (is_string($config)) {
-
-            // Set as class
             $class = $config;
-
-            // Clear class from config
             $config = '';
-
         } elseif (is_object($config)) {
-
             return get_class($config);
-
         } else {
-
             // Force Array
             if (!is_array($config)) {
-
                 $config = ArrayHelper::toArray($config, [], false);
-
             }
-
             if ($removeClass) {
-
                 if (!$class = ArrayHelper::remove($config, 'class')) {
-
                     $class = ArrayHelper::remove($config, 'type');
-
                 }
-
             } else {
-
                 $class = ArrayHelper::getValue(
                     $config,
                     'class',
                     ArrayHelper::getValue($config, 'type')
                 );
-
             }
-
         }
-
         return $class;
     }
 }
