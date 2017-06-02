@@ -271,7 +271,7 @@ class ArrayHelper
      * @param $newValue
      * @return array|bool
      */
-    public static function insertBefore(array &$array, $findKey, $newKey, $newValue)
+    public static function insertBefore(array $array, $findKey, $newKey, $newValue)
     {
         if (array_key_exists($findKey, $array)) {
             $new = array();
@@ -293,7 +293,7 @@ class ArrayHelper
      * @param $newValue
      * @return array|bool
      */
-    public static function insertAfter(array &$array, $findKey, $newKey, $newValue)
+    public static function insertAfter(array $array, $findKey, $newKey, $newValue)
     {
         if (array_key_exists ($findKey, $array)) {
             $new = array();
