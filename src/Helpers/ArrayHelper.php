@@ -295,7 +295,7 @@ class ArrayHelper
      */
     public static function insertAfter(array $array, $findKey, $newKey, $newValue)
     {
-        if (array_key_exists ($findKey, $array)) {
+        if (array_key_exists($findKey, $array)) {
             $new = array();
             foreach ($array as $k => $value) {
                 $new[$k] = $value;
