@@ -263,4 +263,48 @@ class ArrayHelper
 
         return $array;
     }
+
+    /**
+     * @param array $array
+     * @param $findKey
+     * @param $newKey
+     * @param $newValue
+     * @return array|bool
+     */
+    public static function insertBefore(array &$array, $findKey, $newKey, $newValue)
+    {
+        if (array_key_exists($findKey, $array)) {
+            $new = array();
+            foreach ($array as $k => $value) {
+                if ($k === $findKey) {
+                    $new[$newKey] = $newValue;
+                }
+                $new[$k] = $value;
+            }
+            return $new;
+        }
+        return false;
+    }
+
+    /**
+     * @param array $array
+     * @param $findKey
+     * @param $newKey
+     * @param $newValue
+     * @return array|bool
+     */
+    public static function insertAfter(array &$array, $findKey, $newKey, $newValue)
+    {
+        if (array_key_exists ($findKey, $array)) {
+            $new = array();
+            foreach ($array as $k => $value) {
+                $new[$k] = $value;
+                if ($k === $findKey) {
+                    $new[$newKey] = $newValue;
+                }
+            }
+            return $new;
+        }
+        return false;
+    }
 }
