@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/flipbox/skeleton/master.svg?style=flat-square)](https://travis-ci.org/flipbox/skeleton)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/flipbox/skeleton.svg?style=flat-square)](https://scrutinizer-ci.com/g/flipbox/skeleton/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/flipbox/skeleton.svg?style=flat-square)](https://scrutinizer-ci.com/g/flipbox/skeleton)
-[![Total Downloads](https://img.shields.io/packagist/dt/flipboxdigital/skeleton.svg?style=flat-square)](https://packagist.org/packages/league/skeleton)
+[![Total Downloads](https://img.shields.io/packagist/dt/flipboxdigital/skeleton.svg?style=flat-square)](https://packagist.org/packages/flipboxdigital/skeleton)
 
 This package provides a foundation for building other packages or applications.
 
