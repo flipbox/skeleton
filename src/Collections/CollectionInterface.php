@@ -10,10 +10,9 @@ namespace Flipbox\Skeleton\Collections;
 
 /**
  * @author Flipbox Factory <hello@flipboxfactory.com>
- * @since 2.0.0
- * @deprecated
+ * @since 2.1.0
  */
-interface ObjectCollectionInterface extends \IteratorAggregate
+interface CollectionInterface extends \IteratorAggregate
 {
     /**
      * Add an item to the current data items
@@ -48,8 +47,8 @@ interface ObjectCollectionInterface extends \IteratorAggregate
     /**
      * Merge one collection into another
      *
-     * @param ObjectCollectionInterface $collection
+     * @param CollectionInterface $collection
      * @return static
      */
-    public function merge(ObjectCollectionInterface $collection);
+    public function merge(CollectionInterface $collection);
 }

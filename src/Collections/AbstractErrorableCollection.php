@@ -13,6 +13,7 @@ use Flipbox\Skeleton\Error\ErrorTrait;
 /**
  * @author Flipbox Factory <hello@flipboxfactory.com>
  * @since 2.0.0
+ * @deprecated
  */
 abstract class AbstractErrorableCollection extends AbstractObjectCollection implements ErrorableCollectionInterface
 {

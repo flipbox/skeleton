@@ -15,6 +15,7 @@ use Flipbox\Skeleton\Model\ModelInterface;
  * @author Flipbox Factory <hello@flipboxfactory.com>
  * @since 2.0.0
  * @method ModelInterface[] getItems($indexBy = null)
+ * @deprecated
  */
 abstract class AbstractModelCollection extends AbstractObjectCollection implements ModelCollectionInterface
 {

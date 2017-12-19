@@ -8,23 +8,16 @@
 
 namespace Flipbox\Skeleton\Collections;
 
-use Flipbox\Skeleton\Exceptions\InvalidCollectionItemException;
 use Flipbox\Skeleton\Helpers\ArrayHelper;
 use Flipbox\Skeleton\Object\AbstractObject;
 use Flipbox\Skeleton\Object\ObjectInterface;
 
 /**
  * @author Flipbox Factory <hello@flipboxfactory.com>
- * @since 2.0.0
- * @deprecated
+ * @since 2.1.0
  */
-abstract class AbstractObjectCollection extends AbstractObject implements ObjectCollectionInterface
+class Collection extends AbstractObject implements CollectionInterface
 {
-    /**
-     * The item instance class
-     */
-    const ITEM_CLASS_INSTANCE = ObjectInterface::class;
-
     /**
      * A collection of items.
      *
@@ -41,23 +34,9 @@ abstract class AbstractObjectCollection extends AbstractObject implements Object
      *
      * @param $item
      * @return static
-     * @throws InvalidCollectionItemException
      */
     public function addItem($item)
     {
-        // Item class instance
-        $itemInstance = static::ITEM_CLASS_INSTANCE;
-
-        // Validate instance
-        if ($itemInstance && !$item instanceof $itemInstance) {
-            throw new InvalidCollectionItemException(
-                sprintf(
-                    "Unable to add item to collection because it must be an instance of '%s'",
-                    static::ITEM_CLASS_INSTANCE
-                )
-            );
-        }
-
         $this->items[] = $item;
 
         return $this;
@@ -66,7 +45,6 @@ abstract class AbstractObjectCollection extends AbstractObject implements Object
     /**
      * @param array $items
      * @return static
-     * @throws InvalidCollectionItemException
      */
     public function setItems($items = [])
     {
@@ -127,10 +105,10 @@ abstract class AbstractObjectCollection extends AbstractObject implements Object
     /**
      * Merge one collection into another
      *
-     * @param ObjectCollectionInterface $collection
+     * @param CollectionInterface $collection
      * @return static
      */
-    public function merge(ObjectCollectionInterface $collection)
+    public function merge(CollectionInterface $collection)
     {
         $this->items = array_merge(
             $this->getItems(),

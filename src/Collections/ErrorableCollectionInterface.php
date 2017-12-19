@@ -13,6 +13,7 @@ use Flipbox\Skeleton\Error\ErrorInterface;
 /**
  * @author Flipbox Factory <hello@flipboxfactory.com>
  * @since 2.0.0
+ * @deprecated
  */
 interface ErrorableCollectionInterface extends ObjectCollectionInterface, ErrorInterface
 {
