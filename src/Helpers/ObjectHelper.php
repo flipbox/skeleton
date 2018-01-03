@@ -76,6 +76,8 @@ class ObjectHelper
     }
 
     /**
+     * Creates an object via a closure/callable
+     *
      * @param callable $config
      * @param null $instanceOf
      * @return ObjectInterface
@@ -121,22 +123,6 @@ class ObjectHelper
         }
 
         return $class;
-    }
-
-    /**
-     * @param $class
-     * @param $instanceOf
-     * @throws InvalidConfigurationException
-     */
-    protected static function throwInvalidInstanceException($class, $instanceOf)
-    {
-        throw new InvalidConfigurationException(
-            sprintf(
-                "The class '%s' must be an instance of '%s'",
-                (string)$class,
-                (string)$instanceOf
-            )
-        );
     }
 
     /**
@@ -197,5 +183,23 @@ class ObjectHelper
             }
         }
         return $class;
+    }
+
+    /**
+     * Throws an exception when an object is not of correct instance type
+     *
+     * @param $class
+     * @param $instanceOf
+     * @throws InvalidConfigurationException
+     */
+    protected static function throwInvalidInstanceException($class, $instanceOf)
+    {
+        throw new InvalidConfigurationException(
+            sprintf(
+                "The class '%s' must be an instance of '%s'",
+                (string)$class,
+                (string)$instanceOf
+            )
+        );
     }
 }
