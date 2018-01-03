@@ -63,11 +63,42 @@ class ObjectHelper
      */
     public static function create($config, $instanceOf = null)
     {
+        // Closure check
+        if (is_callable($config)) {
+            return static::createFromCallable($config, $instanceOf);
+        }
+
         // Get class from config
         $class = static::checkConfig($config, $instanceOf);
 
         // New object
         return new $class($config);
+    }
+
+    /**
+     * @param callable $config
+     * @param null $instanceOf
+     * @return ObjectInterface
+     * @throws InvalidConfigurationException
+     */
+    protected static function createFromCallable(callable $config, $instanceOf = null)
+    {
+        $object = call_user_func($config);
+
+        if (!is_object($object)) {
+            throw new InvalidConfigurationException(
+                "Unable to create object class."
+            );
+        }
+
+        if (!$object instanceof $instanceOf) {
+            static::throwInvalidInstanceException(
+                get_class($object),
+                $instanceOf
+            );
+        }
+
+        return $object;
     }
 
     /**
@@ -86,16 +117,26 @@ class ObjectHelper
 
         // Make sure we have a valid class
         if ($instanceOf && !is_subclass_of($class, $instanceOf)) {
-            throw new InvalidConfigurationException(
-                sprintf(
-                    "The class '%s' must be an instance of '%s'",
-                    (string)$class,
-                    (string)$instanceOf
-                )
-            );
+            static::throwInvalidInstanceException($class, $instanceOf);
         }
 
         return $class;
+    }
+
+    /**
+     * @param $class
+     * @param $instanceOf
+     * @throws InvalidConfigurationException
+     */
+    protected static function throwInvalidInstanceException($class, $instanceOf)
+    {
+        throw new InvalidConfigurationException(
+            sprintf(
+                "The class '%s' must be an instance of '%s'",
+                (string)$class,
+                (string)$instanceOf
+            )
+        );
     }
 
     /**

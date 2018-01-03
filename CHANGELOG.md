@@ -1,6 +1,11 @@
 # Changelog
 All Notable changes to `skeleton` will be documented in this file
 
+## Unreleased
+
+### Added
+- ObjectHelper::create now supports Closures
+
 ## 2.1.1 - 2017-12-21
 
 ### Added
