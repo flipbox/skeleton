@@ -1,6 +1,11 @@
 # Changelog
 All Notable changes to `skeleton` will be documented in this file
 
+## Unreleased
+
+### Changed
+- Fixed incorrect docblocks
+
 ## 2.1.2 - 2018-01-02
 
 ### Added
