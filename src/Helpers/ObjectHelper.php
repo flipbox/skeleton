@@ -58,7 +58,7 @@ class ObjectHelper
      *
      * @param $config
      * @param null $instanceOf
-     * @return ObjectInterface
+     * @return mixed
      * @throws InvalidConfigurationException
      */
     public static function create($config, $instanceOf = null)
