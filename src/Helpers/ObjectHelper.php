@@ -162,7 +162,7 @@ class ObjectHelper
         // Normalize the config
         if (is_string($config)) {
             $class = $config;
-            $config = '';
+            $config = [];
         } elseif (is_object($config)) {
             return get_class($config);
         } else {

@@ -2,6 +2,8 @@
 All Notable changes to `skeleton` will be documented in this file
 
 ## Unreleased
+### Fixed
+- ObjectHelper::findClassFromConfig should return an empty array when config was passed as a class.
 
 ### Changed
 - Fixed incorrect docblocks
