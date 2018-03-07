@@ -30,9 +30,9 @@ trait AutoLoggerTrait
     /**
      * Set a logger
      *
-     * @param LoggerInterface $logger
+     * @param LoggerInterface|null $logger
      */
-    public function setLogger(LoggerInterface $logger)
+    public function setLogger(LoggerInterface $logger = null)
     {
         $this->logger = $logger;
     }
