@@ -1,7 +1,7 @@
 # Changelog
-All Notable changes to `skeleton` will be documented in this file
+All Notable changes to `flipboxdigital\skeleton` will be documented in this file
 
-## Unreleased
+## 2.1.3- 2018-03-06
 ### Fixed
 - ObjectHelper::findClassFromConfig should return an empty array when config was passed as a class.
 
