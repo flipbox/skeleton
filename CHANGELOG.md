@@ -1,6 +1,10 @@
 # Changelog
 All Notable changes to `flipboxdigital\skeleton` will be documented in this file
 
+## 2.2.0 - 2025-11-03
+### Changed
+- Updated `psr/log` req to v3 and fixed typings
+
 ## 2.1.3- 2018-03-06
 ### Fixed
 - ObjectHelper::findClassFromConfig should return an empty array when config was passed as a class.

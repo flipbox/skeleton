@@ -51,11 +51,10 @@ trait AutoLoggerTrait
      * Logs with an arbitrary level.
      *
      * @param mixed $level
-     * @param string $message
+     * @param string|\Stringable $message
      * @param array $context
-     *
      */
-    public function log($level, $message, array $context = [])
+    public function log($level, \Stringable|string $message, array $context = []): void
     {
         if ($this->getLogger()) {
             $this->getLogger()->log($level, $message, $context);

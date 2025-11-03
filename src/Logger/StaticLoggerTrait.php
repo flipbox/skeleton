@@ -119,8 +119,8 @@ trait StaticLoggerTrait
      * Logs with an arbitrary level.
      *
      * @param mixed $level
-     * @param string $message
+     * @param string|\Stringable $message
      * @param array $context
      */
-    abstract public static function log($level, $message, array $context = []);
+    abstract public static function log($level, \Stringable|string $message, array $context = []): void;
 }
